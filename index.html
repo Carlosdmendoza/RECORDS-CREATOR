@@ -53,32 +53,79 @@
             </select>
         </div>
         
-        
         <!-- Add a button to clear form fields -->
-      
+        <button type="button" id="clearForm">Clear Form</button>
+
+        <!-- Button to generate Apex Snippet -->
+        <button type="submit" class="btnGenerate">Generate Apex Snippet</button>
+        
+
+        <!-- Button to open debug page -->
+        <button type="button" class="btnDebug" id="openDebugPage">Open Debug Page</button>
+
     </form>
-    <div class="btnMenu">
-    <button type="button" id="clearForm">Clear Form</button>
-    <button type="submit" class="btnGenerate">Generate Apex Snippet</button>
-    <!-- Add a button to open the debug page -->    
-    <button type="button"class="btnDebug" id="openDebugPage">Open Debug Page</button>
- </div>
+
+    <!-- Container for generated Apex code for events -->
+    <div class="subHeaderContainer">
+        <h3 class="subHeaders">Use the code below to create event records:</h3> 
+    </div>
+    <div id="apexCodeContainer">
+        <button id="copyButton" onclick="copyApexCode()">Copy</button>
+        <pre id="apexCode"></pre>
+    </div>
 
 
-    <!-- Add a div to contain the generated Apex code -->
-<div id="apexCodeContainer">
-    <!-- Add an icon for copying -->
-    <button id="copyButton" onclick="copyApexCode()">Copy</button>
-    <pre id="apexCode"></pre>
-</div>
 
-<!-- This one will be used to Assign Tickets to Created Events-->
-<div id="apexCodeContainer2">
-    <!-- Add an icon for copying -->
-    <button id="copyButton" onclick="copyApexCode2()">Copy</button>
-    <pre id="apexCode"></pre>
-</div>
 
+    
+
+    <!-- Form for Event Items -->
+    <form id="eventItemForm">
+
+        <div class="form-group">
+            <label for="eventItemPrice">Event Item Price:</label>
+            <input type="number" id="eventItemPrice" name="eventItemPrice" required>
+        </div>
+
+        <div class="form-group">
+            <label for="isFree">Free:</label>
+            <select id="isFree" name="isFree">
+                <option value="true">True</option>
+                <option value="false">False</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="ticketName">Ticket Name:</label>
+            <input type="text" id="ticketName" name="ticketName" required>
+        </div>
+
+        <div class="form-group">
+            <label for="itemDescription">Event Item Description:</label>
+            <input type="text" id="itemDescription" name="itemDescription" required>
+        </div>
+
+        <div class="form-group">
+            <label for="quantityAvailable">Quantity Made Available:</label>
+            <input type="number" id="quantityAvailable" name="quantityAvailable" required>
+        </div>
+
+        <div class="form-group">
+            <label for="isVisible">Visible:</label>
+            <select id="isVisible" name="isVisible">
+                <option value="true">True</option>
+                <option value="false">False</option>
+            </select>
+        </div>
+
+        <!-- Add a button to clear form fields -->
+        <button type="button" id="clearForm2">Clear Form</button>
+
+        <!-- Button to generate Apex Snippet 2 -->
+        <button type="submit" class="btnGenerate">Generate Apex Snippet 2</button>
+
+    </form>
+
+    <!-- Container for generated Apex code for event items -->
+   
     <script src="script.js"></script>
-</body>
-</html>
