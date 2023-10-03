@@ -8,6 +8,7 @@ Streamlined user interface for inputting Salesforce parameters.
 Dynamically generates Apex code based on user-provided information.
 Supports customization of UI experience for event records.
 Option to open Salesforce debug page directly from the app.
-Try it out live here!
+
+[Try it out live here!](https://carlosdmendoza.github.io/RECORDS-CREATOR/)https://carlosdmendoza.github.io/RECORDS-CREATOR/
 
 
