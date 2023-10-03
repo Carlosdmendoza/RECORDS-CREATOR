@@ -76,7 +76,7 @@ button {
     margin-bottom: 5%;
 }
 
-button#clearForm {
+button#clearForm , button#clearForm2 {
     background-color: #dc3545;
     float:left;
 }
