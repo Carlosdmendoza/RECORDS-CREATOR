@@ -10,4 +10,4 @@ Supports customization of UI experience for event records.
 Option to open Salesforce debug page directly from the app.
 Try it out live here!
 
-Feel free to customize this description to best fit your web app's features and purpose.
+
