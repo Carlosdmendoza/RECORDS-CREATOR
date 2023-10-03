@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Apex Snippet Generator</h1>
+
+    <form id="snippetForm">
+      
+        <div class="form-group">
+            <label for="description"> Short Description: *</label>
+            <input type="text" id="shortDescription" name="shortDescription" required>
+        </div>
+
+        <div class="form-group">
+            <label for="startValue">Start Record Value: </label>
+            <input type="number" id="startValue" name="startValue" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="endValue">End Record Value: </label>
+            <input type="number" id="endValue" name="endValue" required>
+        </div>  
+
+        <div class="form-group">
+            <label for="eventNameSuffix">Event Name Suffix: *</label>
+            <input type="text" id="eventNameSuffix" name="eventNameSuffix">
+        </div>
+
+        <div class="form-group">
+            <label for="eventGroupId">Event Group ID: *</label>
+            <input type="text" id="eventGroupId" name="eventGroupId" required>
+        </div>
+
+        <div class="form-group">
+            <label for="orgLoginUrl">Org Login URL: *</label>
+            <input type="text" id="orgLoginUrl" name="orgLoginUrl">
+        </div>
+
+        <div class="form-group ui-experience-wrapper">
+            <label for="uiExperience">UI Experience:</label>
+            <select id="uiExperience" name="uiExperience" class="ui-experience-select">
+                <option value="Fullwidth">Fullwidth</option>
+                <option value="Simple">Simple</option>
+                <option value="Tabbed">Tabbed</option>
+                <option value="Dynamic">Dynamic</option>
+            </select>
+        </div>
+        
+        
+        <!-- Add a button to clear form fields -->
+      
+    </form>
+    <div class="btnMenu">
+    <button type="button" id="clearForm">Clear Form</button>
+    <button type="submit" class="btnGenerate">Generate Apex Snippet</button>
+    <!-- Add a button to open the debug page -->    
+    <button type="button"class="btnDebug" id="openDebugPage">Open Debug Page</button>
+ </div>
+
+
+    <!-- Add a div to contain the generated Apex code -->
+<div id="apexCodeContainer">
+    <!-- Add an icon for copying -->
+    <button id="copyButton" onclick="copyApexCode()">Copy</button>
+    <pre id="apexCode"></pre>
+</div>
+
+<!-- This one will be used to Assign Tickets to Created Events-->
+<div id="apexCodeContainer2">
+    <!-- Add an icon for copying -->
+    <button id="copyButton" onclick="copyApexCode2()">Copy</button>
+    <pre id="apexCode"></pre>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
