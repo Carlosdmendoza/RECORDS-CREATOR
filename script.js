@@ -43,7 +43,41 @@ document.getElementById('snippetForm').addEventListener('submit', function(event
     const endValue = parseInt(document.getElementById('endValue').value); // Retrieve endValue
     const uiExperience = document.getElementById('uiExperience').value;
 
+    document.getElementById('snippetForm2').addEventListener('submit', function(event) {
+        event.preventDefault();
 
+     // Get user input values for Event Items creation
+    const isFree = document.getElementById('isFree').checked;
+    const eventItemPrice = parseFloat(document.getElementById('eventItemPrice').value);
+    const ticketName = document.getElementById('ticketName').value;
+    const itemDescription = document.getElementById('itemDescription').value;
+    const quantityAvailable = parseInt(document.getElementById('quantityAvailable').value);
+    const isVisible = document.getElementById('isVisible').value;
+
+    const generatedApexCode2 = `
+    // This will create ${numRecords} event items.
+
+    List<conference360__Event__c> events = [SELECT Id FROM conference360__Event__c WHERE conference360__Short_Description__c = '${description}' AND conference360__Visible__c = ${isVisible}];
+    List<conference360__Event_Item__c> eventItems = new List<conference360__Event_Item__c>();
+    for (conference360__Event__c ev : events) {
+        conference360__Event_Item__c ei1 = new conference360__Event_Item__c();
+        ei1.conference360__Event__c = ev.Id;
+        ei1.conference360__Price__c = ${isFree ? 0 : eventItemPrice};
+        ei1.conference360__Free__c = ${isFree};
+        ei1.conference360__Item_Name__c = '${ticketName}';
+        ei1.conference360__Description2__c = '${itemDescription}';
+        ei1.conference360__Type__c = 'Main event ticket';
+        ei1.conference360__Quantity_Made_Available__c = ${quantityAvailable};
+        eventItems.add(ei1);
+        ev.conference360__Visible__c = ${isVisible};
+    }
+    insert eventItems;
+    update events;
+`;
+ // Display the generated Apex code
+ const apexCodeElement2 = document.getElementById('apexCode2');
+ apexCodeElement2.innerText = generatedApexCode2;
+});
 
 
 document.getElementById('openDebugPage').addEventListener('click', function() {
