@@ -127,3 +127,51 @@ let numRecords = endValue  - startValue;
 const apexCodeElement = document.getElementById('apexCode');
 apexCodeElement.innerText = generatedApexCode;
 });
+
+// Add this function to your JavaScript
+// Add this code to your JavaScript
+function toggleField(fieldName) {
+    const checkbox = document.getElementById(`${fieldName}Checkbox`);
+    const element = document.getElementById(fieldName);
+    const sectionLabel = document.querySelector(`label[for=${fieldName}]`);
+
+    if (checkbox && element) {
+        // Validation: If "Is Free" checkbox is checked, uncheck "Event Item Price" checkbox
+        if (fieldName === 'isFree' && checkbox.checked) {
+            const eventItemPriceCheckbox = document.getElementById('eventItemPriceCheckbox');
+            if (eventItemPriceCheckbox) {
+                eventItemPriceCheckbox.checked = false;
+            }
+        }
+
+        // Validation: If "Event Item Price" checkbox is checked, uncheck "Is Free" checkbox
+        if (fieldName === 'eventItemPrice' && checkbox.checked) {
+            const isFreeCheckbox = document.getElementById('isFreeCheckbox');
+            if (isFreeCheckbox) {
+                isFreeCheckbox.checked = false;
+            }
+        }
+        
+        element.required = checkbox.checked; // Make the field required based on the checkbox state
+        element.style.display = checkbox.checked ? 'block' : 'none'; // Toggle visibility
+        element.value = element.value.trim() === '' && checkbox.checked ? 'XXX' : element.value; // Replace blank values
+    }
+    
+    // If checkbox is unchecked, hide the field by default
+    if (!checkbox.checked) {
+        element.style.display = 'none';
+    }
+}
+
+
+// Add this code at the end of your JavaScript file or script tag
+document.addEventListener('DOMContentLoaded', function () {
+ //Form 1
+    toggleField('shortDescription');
+    toggleField('eventGroupId');
+  
+//Form 2
+    toggleField('isFree');
+    toggleField('eventItemPrice');
+
+});

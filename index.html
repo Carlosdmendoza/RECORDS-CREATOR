@@ -10,11 +10,54 @@
 </head>
 <body>
     <h1>Apex Snippet Generator</h1>
+<div name="MainContent" class="mainContent">
 
+
+<!-- Add this section to your HTML form -->
+<h2> Please select the fields you need: </h2>
+
+<div class="checkbox-grid">
+<div class="checkbox-container">
+    <input type="checkbox" id="shortDescriptionCheckbox" name="shortDescriptionCheckbox" class="checkbox-input" onchange="toggleField('shortDescription')" />
+    <label for="shortDescriptionCheckbox" class="checkbox-label">Event Short Description</label>
+</div>
+<div class="checkbox-container">
+    <input type="checkbox" id="shortDescriptionCheckbox" name="startRecordCheckbox" class="checkbox-input" onchange="toggleField('startValue')" />
+    <label for="shortDescriptionCheckbox" class="checkbox-label">Start Records Value</label>
+</div>
+
+<div class="checkbox-container">
+    <input type="checkbox" id="shortDescriptionCheckbox" name="endRecordCheckbox" class="checkbox-input" onchange="toggleField('endValue')" />
+    <label for="shortDescriptionCheckbox" class="checkbox-label">End Records Value</label>
+</div>
+
+<div class="checkbox-container">
+    <input type="checkbox" id="shortDescriptionCheckbox" name="eventNameSuffixCheckbox" class="checkbox-input" onchange="toggleField('evebtNameSuffix')" />
+    <label for="shortDescriptionCheckbox" class="checkbox-label">Evnt Name Suffix</label>
+</div>
+
+<div class="checkbox-container">
+    <input type="checkbox" id="eventGroupIdCheckbox" name="eventGroupIdCheckbox" class="checkbox-input" onchange="toggleField('eventGroupId')" />
+    <label for="eventGroupIdCheckbox" class="checkbox-label">Include Event Group ID</label>
+</div>
+
+<div class="checkbox-container">
+    <input type="checkbox" id="eventGroupIdCheckbox" name="uiExperienceCheckbox" class="checkbox-input" onchange="toggleField('uiExperience')" />
+    <label for="eventGroupIdCheckbox" class="checkbox-label">Include UI Experience</label>
+</div>
+
+</div>
+<!-- Repeat the above pattern for other fields in Snippet Form 1 -->
+
+
+   
+
+
+  <!-- Add a button to clear form fields -->
     <form id="snippetForm">
       
         <div class="form-group">
-            <label for="description"> Short Description: *</label>
+            <label for="shortDescription"> Short Description: </label>
             <input type="text" id="shortDescription" name="shortDescription" required>
         </div>
 
@@ -29,12 +72,12 @@
         </div>  
 
         <div class="form-group">
-            <label for="eventNameSuffix">Event Name Suffix: *</label>
+            <label for="eventNameSuffix">Event Name Suffix: </label>
             <input type="text" id="eventNameSuffix" name="eventNameSuffix">
         </div>
 
         <div class="form-group">
-            <label for="eventGroupId">Event Group ID: *</label>
+            <label for="eventGroupId">Event Group ID: </label>
             <input type="text" id="eventGroupId" name="eventGroupId" required>
         </div>
 
@@ -75,8 +118,41 @@
     </div>
 
 
+<!-- Checkbox Grid for Apex code 2 -->
+    <div class="checkbox-grid">
 
+        <div class="checkbox-container">
+            <input type="checkbox" id="isFreeCheckbox" name="isFreeCheckbox" class="checkbox-input" onchange="toggleField('isFree')" />
+            <label for="isFreeCheckbox" class="checkbox-label">Free Event Items</label>
+        </div>
+        
+        <div class="checkbox-container">
+            <input type="checkbox" id="eventItemPriceCheckbox" name="eventItemPriceCheckbox" class="checkbox-input" onchange="toggleField('eventItemPrice')"  />
+            <label for="eventItemPriceCheckbox" class="checkbox-label">Paid Event Items</label>
+        </div>
 
+        <div class="checkbox-container">
+            <input type="checkbox" id="ticketNameCheckbox" name="ticketNameCheckbox" class="checkbox-input" onchange="toggleField('ticketName')"  />
+            <label for="ticketNameCheckbox" class="checkbox-label">Ticket Name</label>
+        </div>
+
+        <div class="checkbox-container">
+            <input type="checkbox" id="ticketNameCheckbox" name="ticketNameCheckbox" class="checkbox-input" onchange="toggleField('ticketName')"  />
+            <label for="ticketNameCheckbox" class="checkbox-label">Ticket Description</label>
+        </div>
+
+        <div class="checkbox-container">
+            <input type="checkbox" id="quantityAvailableCheckbox" name="quantityAvailableCheckbox" class="checkbox-input" onchange="toggleField('quantityAvailable')"  />
+            <label for="ticketNameCheckbox" class="checkbox-label">Ticket Name</label>
+        </div>
+
+        <div class="checkbox-container">
+            <input type="checkbox" id="quantityAvailableCheckbox" name="quantityAvailableCheckbox" class="checkbox-input" onchange="toggleField('quantityAvailable')"  />
+            <label for="ticketNameCheckbox" class="checkbox-label"> Publish or Unpublish Events</label>
+        </div>
+    </div>
+        
+        <!-- Repeat the above pattern for other fields in Snippet Form 2 -->
     
 
     <!-- Form for Event Items -->
@@ -84,7 +160,7 @@
 
         <div class="form-group">
             <label for="eventItemPrice">Event Item Price:</label>
-            <input type="number" id="eventItemPrice" name="eventItemPrice" required>
+            <input type="number" id="eventItemPrice" name="eventItemPrice">
         </div>
 
         <div class="form-group">
@@ -96,18 +172,18 @@
         </div>
 
         <div class="form-group">
-            <label for="ticketName">Ticket Name:</label>
-            <input type="text" id="ticketName" name="ticketName" required>
+            <label for="ticketName">Event Item Name:</label>
+            <input type="text" id="ticketName" name="ticketName" >
         </div>
 
         <div class="form-group">
             <label for="itemDescription">Event Item Description:</label>
-            <input type="text" id="itemDescription" name="itemDescription" required>
+            <input type="text" id="itemDescription" name="itemDescription" >
         </div>
 
         <div class="form-group">
             <label for="quantityAvailable">Quantity Made Available:</label>
-            <input type="number" id="quantityAvailable" name="quantityAvailable" required>
+            <input type="number" id="quantityAvailable" name="quantityAvailable" >
         </div>
 
         <div class="form-group">
@@ -131,6 +207,8 @@
         <button id="copyButton2" onclick="copyApexCode2()">Copy</button>
         <pre id="apexCode2"></pre>
     </div>
+
+</div> <!--End of Main Container-->
 
     <!-- Container for generated Apex code for event items -->
    
