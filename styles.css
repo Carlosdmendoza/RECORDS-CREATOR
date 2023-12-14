@@ -1,3 +1,7 @@
+.form-group {
+    display: none; /* Hide the form by default */
+}
+
 /* Add styling for the black background and copy button */
 #apexCodeContainer, #apexCodeContainer2 {
     background-color: #000;
@@ -103,8 +107,8 @@ button:hover {
     background-color: #0056b3;
 }
 
-button#clearForm:hover {
-    background-color: #c82333;
+button#clearForm:hover, button#clearForm2:hover {
+    background-color: #b31e2d;
 }
 
 /* Add this CSS to your styles.css file or in a style block in your HTML file */
@@ -134,13 +138,16 @@ button#clearForm:hover {
     border-color: #007bff;
 }
 
-.btnGenerate, .btnGenerate2{
+btnGenerate , btnDebug
+{
     float: left;
     margin-left: 5px;
 }
 
-.btnDebug{
+button#clearForm, button#clearForm2 ,button#btnCustomize2, button#btnCustomize
+{
     float: right;
+    margin-right: 5px;
     
 }
 
@@ -182,41 +189,4 @@ form#snippetForm2 {
     margin-top: 5%;
 }
 
-.checkbox-container {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
 
-.checkbox-label {
-    margin-left: 10px;
-}
-
-.checkbox-input {
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    border: 2px solid #3498db;
-    border-radius: 4px;
-    outline: none;
-    cursor: pointer;
-    margin-right: 5px;
-}
-
-.checkbox-input:checked {
-    background-color: greenyellow;
-    border: 2px solid #FFF;
-}
-
-.checkbox-container,
-.checkbox-label {
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-.checkbox-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 5px; 
-   
-}
