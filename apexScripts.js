@@ -51,7 +51,7 @@ let numRecords = endValue  - startValue;
      e.conference360__Short_Description__c = '${description}';
      e.conference360__UI_Experience__c = '${uiExperience}';
      e.conference360__Event_Group__c = '${eventGroupId}';
-     ev.conference360__Visible__c = '${publishEvent}';
+     e.conference360__Visible__c = ${publishEvent};
      events.add(e);
    }
  insert events;
@@ -88,7 +88,7 @@ for (conference360__Event__c ev : events) {
     ei1.conference360__Item_Name__c = '${ticketName}';
     ei1.conference360__Description2__c = '${itemDescription}';
     ei1.conference360__Type__c = 'Main event ticket';
-    ei1.conference360__Quantity_Made_Available__c = '${quantityAvailable}';
+    ei1.conference360__Quantity_Made_Available__c = ${quantityAvailable};
     ev.conference360__Visible__c = ${isVisible ? true : false};
     eventItems.add(ei1);
    
